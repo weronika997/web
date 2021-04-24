@@ -1,0 +1,14 @@
+version: '3.4'
+
+volumes:
+    react_app_public: {}
+
+services:
+    react-app:
+        build: react-app/.
+        volumes:
+            - ./data/:/home/app/src/data
+            - react_app_public:/home/app/public
+        command: >
+            sh -c "cp /home/app/index.html /home/app/public &&
+                    npm run build"
