@@ -7,6 +7,7 @@ WORKDIR /home/app
 COPY ./app/. /home/app/
 RUN mkdir /home/app/public
 RUN mkdir /home/app/src/data
+RUN mkdir /home/app/src/data-config
 
 RUN npm install -g npm@6
 RUN npm install

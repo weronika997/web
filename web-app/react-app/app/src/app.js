@@ -6,8 +6,8 @@ import KeplerGl from 'kepler.gl';
 import {DEFAULT_MAP_STYLES} from './icgc-map-styles';
 import {addDataToMap} from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
-import geojsonData from "./data/network_links.json";
-// import configMap from "./data/munis-config.json";
+import geojsonData from "./data/network_counts.json";
+import configMap from "./data-config/network_counts_config.json";
 
 
 
@@ -26,7 +26,7 @@ class App extends Component {
           }
         };
     
-        this.props.dispatch(addDataToMap({datasets: dataset}));
+        this.props.dispatch(addDataToMap({datasets: dataset, config: configMap}));
       }
 
 
