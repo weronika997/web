@@ -20,3 +20,10 @@ docker run --rm --cpus="7.5" --memory-reservation="8g" \
 --mount type=bind,source=$SCRIPTS_ABSOLUTE_PATH,target=/home/data-processing/scripts \
 data-processing python scripts/custom_vis.py \
 /home/data-processing/data $1 \
+
+echo "Processing vehicles to csv..."
+docker run --rm --cpus="7.5" --memory-reservation="8g" \
+--mount type=bind,source=$DATA_ABSOLUTE_PATH,target=/home/data-processing/data \
+--mount type=bind,source=$SCRIPTS_ABSOLUTE_PATH,target=/home/data-processing/scripts \
+data-processing python scripts/genet_veh_to_csv.py \
+/home/data-processing/data $1 \
