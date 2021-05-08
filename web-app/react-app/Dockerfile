@@ -10,4 +10,5 @@ RUN mkdir /home/app/src/data
 RUN mkdir /home/app/src/data-config
 
 RUN npm install -g npm@6
+RUN npm i --save react-select
 RUN npm install

@@ -6,7 +6,7 @@ import KeplerGl from 'kepler.gl';
 import {DEFAULT_MAP_STYLES} from './icgc-map-styles';
 import {addDataToMap} from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
-import geojsonData from "./data/network_counts.json";
+//import geojsonData from "./data/network_counts.json";
 import configMap from "./data-config/network_counts_config.json";
 
 
@@ -16,23 +16,23 @@ const MAPBOX_TOKEN=" ";
 
 class App extends Component {
 
-    componentDidMount() {
+    //componentDidMount() {
         
-        const data = Processors.processGeojson(geojsonData);
-        const dataset = {
-          data,
-          info: {
-            id: 'zx0nbmuqe'
-          }
-        };
+        //const data = Processors.processGeojson(geojsonData);
+        //const dataset = {
+        //  data,
+        //  info: {
+        //    id: 'zx0nbmuqe'
+        //  }
+        //};
     
-        this.props.dispatch(addDataToMap({datasets: dataset, config: configMap}));
-      }
+        //this.props.dispatch(addDataToMap({datasets: dataset, config: configMap}));
+      //}
 
 
       render() {
         return (
-          <div style={{position: 'absolute', width: '100%', height: '100%', minHeight: '70vh'}}>
+          <div style={{position: 'absolute', width: '100%', height: '90%', minHeight: '70vh'}}>
             <AutoSizer>
               {({height, width}) => (
                 <KeplerGl
