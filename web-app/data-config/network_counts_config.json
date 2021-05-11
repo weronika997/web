@@ -9,7 +9,7 @@
             "type": "geojson",
             "config": {
               "dataId": "zx0nbmuqe",
-              "label": "NetworkCounts",
+              "label": "h3",
               "color": [
                 18,
                 147,
