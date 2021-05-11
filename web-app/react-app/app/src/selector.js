@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
+import { Dropdown, Grid} from "semantic-ui-react";
+// import Select from 'react-select';
 
 const options_scenario = [
   { value: '2019', label: '2019' },
@@ -19,28 +20,61 @@ const options_time = [
     { value: 'evening', label: 'evening' }
 ]
 
+// const SelectorComponent = () => (
+// <div style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+//     <div style={{
+//         width: '30%',
+//         display: 'inline-block'}}>
+//     <Select options={options_scenario}
+//             placeholder={"Scenario"}/>
+//     </div>
+//     <div style={{
+//         width: '30%',
+//         display: 'inline-block'
+//         }}>
+//     <Select options={options_mobility}
+//             placeholder={"Mobility"} />
+//     </div>
+//     <div style={{
+//         width: '30%',
+//         display: 'inline-block'
+//        }}>
+//     <Select options={options_time}
+//             placeholder={ "Time" } />
+//     </div>
+// </div>
+// )
+
 const SelectorComponent = () => (
-<div style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-    <div style={{
-        width: '30%',
-        display: 'inline-block'}}>
-    <Select options={options_scenario} 
-            placeholder={"Scenario"}/>
-    </div>
-    <div style={{
-        width: '30%',
-        display: 'inline-block'
-        }}>
-    <Select options={options_mobility}
-            placeholder={"Mobility"} />
-    </div>
-    <div style={{
-        width: '30%',
-        display: 'inline-block'
-       }}>
-    <Select options={options_time}
-            placeholder={ "Time" } />
-    </div>
-</div>
+    <Grid columns={3}>
+        <Grid.Row>
+            <Grid.Column>
+                <Dropdown
+                    placeholder='Select scenario'
+                    fluid
+                    selection
+                    options={options_scenario}
+                />
+            </Grid.Column>
+            <Grid.Column>
+                <Dropdown
+                    placeholder='Select time'
+                    fluid
+                    selection
+                    options={options_time}
+                />
+            </Grid.Column>
+            <Grid.Column>
+                <Dropdown
+                    placeholder='Select mobility'
+                    fluid
+                    selection
+                    options={options_mobility}
+                />
+            </Grid.Column>
+        </Grid.Row>
+    </Grid>
+
+
 )
 export default SelectorComponent;

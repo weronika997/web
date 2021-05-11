@@ -4,13 +4,12 @@ import {Provider} from 'react-redux';
 import {render} from 'react-dom';
 import store from './store';
 import App from './app';
-import SelectorComponent from './selector'
+import 'semantic-ui-css/semantic.min.css';
 
 
 
 const Root = () => (
   <Provider store={store}>
-    <SelectorComponent />
     <App />
   </Provider>
 );
